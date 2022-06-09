@@ -3,7 +3,7 @@
 /// <summary>
 /// Клас для відображення системи арифметичних рівнянь:
 /// a11*x^2+a12*y^2+a13=0
-//  a21*x^2+a22*y^2+a23=0
+///  a21*x^2+a22*y^2+a23=0
 /// </summary>
 ref class ArithmeticEquations : public Equations
 {

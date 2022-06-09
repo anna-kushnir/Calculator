@@ -60,13 +60,17 @@ Int16 ArithmeticEquations::JakobiMethod(List<Double>^ result, Double precis)
 		else result->Add(-1);
 		return 0;
 	}
-	Double num1, num2;
-	Boolean flag = true;
+
+	Double num1, num2;		// Змінні для тимчасового збереження результатів обчислення коренів.
+	Boolean flag = true;	// Прапорець, який визначає, чи вдалося розв’язати систему рівнянь.
+	Double delta;			// Різниця між значеннями коренів на сусідніх ітераціях.
+	Int32 i;				// Лічильник ітерацій.
+
 /* 1 */
 	if (a[0][0] != 0 && a[1][1] != 0 && checkInitApprox(1)) {
 		result->Add(x0[0]);
 		result->Add(x0[1]);
-		Int32 i = 2;
+		i = 2;
 		while (true) {
 			iterations++;
 			num1 = getX1(result[i - 1]);
@@ -80,18 +84,19 @@ Int16 ArithmeticEquations::JakobiMethod(List<Double>^ result, Double precis)
 			else result->Add(-num1);
 			if (x0[1] >= 0) result->Add(num2);
 			else result->Add(-num2);
-			Double delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
+			delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
 			if (delta <= precis) {
 				return 1;
 			}
 			i += 2;
 		}
 	}
+
 /* 2 */
 	if (a[1][0] != 0 && a[0][1] != 0 && checkInitApprox(2)) {
 		result->Add(x0[0]);
 		result->Add(x0[1]);
-		Int32 i = 2;
+		i = 2;
 		while (true) {
 			iterations++;
 			num1 = getX2(result[i - 1]);
@@ -104,7 +109,7 @@ Int16 ArithmeticEquations::JakobiMethod(List<Double>^ result, Double precis)
 			else result->Add(-num1);
 			if (x0[1] >= 0) result->Add(num2);
 			else result->Add(-num2);
-			Double delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
+			delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
 			if (delta <= precis) {
 				return 1;
 			}
@@ -145,17 +150,23 @@ Int16 ArithmeticEquations::ZeydelMethod(List<Double>^ result, Double precis)
 		else result->Add(-1);
 		return 0;
 	}
-	Double num1, num2;
+
+	Double num1, num2;		// Змінні для тимчасового збереження результатів обчислення коренів.
+	Boolean flag = true;	// Прапорець, який визначає, чи вдалося розв’язати систему рівнянь.
+	Double delta;			// Різниця між значеннями коренів на сусідніх ітераціях.
+	Int32 i; 				// Лічильник ітерацій.
+
 /* 1 */
 	if (a[0][0] != 0 && a[1][1] != 0 && checkInitApprox(1)) {
 		result->Add(x0[0]);
 		result->Add(x0[1]);
-		Int32 i = 2;
+		i = 2;
 		while (true) {
 			iterations++;
 			num1 = getX1(result[i - 1]);
 			if (!isfinite(num1)) {
 				result->Clear();
+				flag = false;
 				break;
 			}
 			if (x0[0] >= 0) result->Add(num1);
@@ -164,22 +175,24 @@ Int16 ArithmeticEquations::ZeydelMethod(List<Double>^ result, Double precis)
 			num2 = getY2(result[i]);
 			if (!isfinite(num2)) {
 				result->Clear();
+				flag = false;
 				break;
 			}
 			if (x0[1] >= 0) result->Add(num2);
 			else result->Add(-num2);
-			Double delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
+			delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
 			if (delta <= precis) {
 				return 1;
 			}
 			i += 2;
 		}
 	}
+
 /* 2 */
 	if (a[1][0] != 0 && a[0][1] != 0 && checkInitApprox(2)) {
 		result->Add(x0[0]);
 		result->Add(x0[1]);
-		Int32 i = 2;
+		i = 2;
 		while (true) {
 			iterations++;
 			num1 = getX2(result[i - 1]);
@@ -197,14 +210,15 @@ Int16 ArithmeticEquations::ZeydelMethod(List<Double>^ result, Double precis)
 			}
 			if (x0[1] >= 0) result->Add(num2);
 			else result->Add(-num2);
-			Double delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
+			delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
 			if (delta <= precis) {
 				return 1;
 			}
 			i += 2;
 		}
 	}
-	return -1;
+	if (flag) return -1;
+	return -3;
 }
 
 Int16 ArithmeticEquations::getId()

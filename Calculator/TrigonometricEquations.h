@@ -111,9 +111,9 @@ protected:
 	Double getY2dX(Double x) override;
 	/// <summary>
 	/// Повертає значення похідної по Y першого рівняння системи у точці y.
-    /// </summary>
-    /// <param name="y">Аргумент функції.</param>
-    /// <returns>Значення типу Double.</returns>
+	/// </summary>
+	/// <param name="y">Аргумент функції.</param>
+	/// <returns>Значення типу Double.</returns>
 	Double getX1dY(Double y) override;
 	/// <summary>
 	/// Повертає значення похідної по Y другого рівняння системи у точці y.

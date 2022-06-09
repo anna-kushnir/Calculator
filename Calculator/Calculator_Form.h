@@ -18,23 +18,22 @@ namespace CalculatorNamespace {
 	/// </summary>
 	public ref class Calculator_Form : public System::Windows::Forms::Form
 	{
-	public:
 		/// <summary>
 		/// Створює форму Calculator_Form та ініціалізує її компоненти.
 		/// </summary>
-		Calculator_Form(void);
-
-	protected:
+	public: Calculator_Form(void);
 		/// <summary>
 		/// Видаляє всі використовувані формою Calculator_Form компоненти.
 		/// </summary>
-		~Calculator_Form();
+	protected: ~Calculator_Form();
+
 	/// <summary>
 	/// Шлях до файлу, куди користувач зберігає отриманий результат розв'язку системи.
 	/// </summary>
 	private: String^ path;
 	/// <summary>
-	/// Система нелінійних рівнянь обраного виду з уведеними коефіцієнтами, а також, можливо, з вказаними початковими наближеннями розв'язку.
+	/// Система нелінійних рівнянь обраного виду з уведеними коефіцієнтами, а також, 
+	/// можливо, з вказаними початковими наближеннями розв'язку.
 	/// </summary>
 	private: Equations^ equations;
 	/// <summary>
@@ -88,7 +87,7 @@ namespace CalculatorNamespace {
 	/// </summary>
 	private: System::Windows::Forms::ToolStripMenuItem^ btnJakobiMethod;
 	/// <summary>
-	/// Елемент меню для вибору методу Гауса-Зейделя
+	/// Елемент меню для вибору методу Гауса-Зейделя.
 	/// </summary>
 	private: System::Windows::Forms::ToolStripMenuItem^ btnZeydelMethod;
 
@@ -161,7 +160,8 @@ namespace CalculatorNamespace {
 	/// </summary>
 	private: System::Windows::Forms::ToolStripMenuItem^ menuClear;
 	/// <summary>
-	/// Елемент головного меню для збереження результату у створений або новий файл.
+	/// Елемент головного меню для збереження результату у раніше створений або 
+	/// новий файл.
 	/// </summary>
 	private: System::Windows::Forms::ToolStripMenuItem^ menuSaveResult;
 	/// <summary>
@@ -173,20 +173,19 @@ namespace CalculatorNamespace {
 	/// </summary>
 	private: System::Windows::Forms::ToolStripMenuItem^ menuSeeLast;
 	/// <summary>
-	/// Меню інформації.
+	/// Меню для виведення інформації.
 	/// </summary>
 	private: System::Windows::Forms::ToolStripMenuItem^ menuInfo;
 
-	private:
-		/// <summary>
-		/// Необхідна змінна для зберігання компонентів графічного дизайну.
-		/// </summary>
-		System::ComponentModel::Container ^components;
+	/// <summary>
+	/// Необхідна змінна для зберігання компонентів графічного дизайну.
+	/// </summary>
+	private: System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Ініціалізує всі графічні компоненти форми.
-		/// </summary>
+	/// <summary>
+	/// Ініціалізує всі графічні компоненти форми.
+	/// </summary>
 		void InitializeComponent(void)
 		{
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
@@ -736,14 +735,14 @@ namespace CalculatorNamespace {
 	/// <param name = 'e'>Об'єкт класу FormClosingEventArgs^</param>
 	/// <returns>Значення типу Void.</returns>
 	private: System::Void Calculator_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e);
-    /// <summary>
-    /// Викликається при натисканні на кнопку btnStart. Опрацьовує введені користувачем 
+	/// <summary>
+	/// Викликається при натисканні на кнопку btnStart. Опрацьовує введені користувачем 
 	/// дані та, якщо не виявлено помилок, розв'язує обрану систему рівнянь обраним методом.
-    /// </summary>
+	/// </summary>
 	/// <param name = 'sender'>Об’єкт класу Object^</param>
 	/// <param name = 'e'>Об'єкт класу EventArgs^</param>
 	/// <returns>Значення типу Void.</returns>
-    private: System::Void btnStart_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void btnStart_Click(System::Object^ sender, System::EventArgs^ e);
 	/// <summary>
 	/// Викликається при натисканні на кнопку btnDrawGraph. Опрацьовує введені користувачем 
 	/// дані та викликає дочірню форму для введення меж для побудови графіків, і на основі 
@@ -816,7 +815,6 @@ namespace CalculatorNamespace {
 	/// <param name = 'e'>Об'єкт класу EventArgs^</param>
 	/// <returns>Значення типу Void.</returns>
 	private: System::Void btnZeydelMethod_Click(System::Object^ sender, System::EventArgs^ e);
-
 
 	/// <summary>
 	/// Сканує коефіцієнти рівнянь системи з форми Calculator_Form та записує їх у 
@@ -931,5 +929,5 @@ namespace CalculatorNamespace {
 	/// <param name = 'precis'>Точність, з якою потрібно обчислити розв'язок системи.</param>
 	/// <returns>Значення типу Void.</returns>
 	private: System::Void solve(Double precis);
-};
+	};
 }

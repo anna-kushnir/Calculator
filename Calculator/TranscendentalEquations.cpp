@@ -41,13 +41,17 @@ Int16 TranscendentalEquations::JakobiMethod(List<Double>^ result, Double precis)
 	(a[1][2] == -1 && (a[1][0] == 0 || a[1][1] == 0))) {
 		return -2;
 	}
-	Double num1, num2;
-	Boolean flag = true;
+
+	Double num1, num2;		// Змінні для тимчасового збереження результатів обчислення коренів.
+	Boolean flag = true;	// Прапорець, який визначає, чи вдалося розв’язати систему рівнянь.
+	Double delta;			// Різниця між значеннями коренів на сусідніх ітераціях.
+	Int32 i;				// Лічильник ітерацій.
+
 /* 1 */
 	if (a[0][0] != 0 && a[1][1] != 0 && checkInitApprox(1)) {
 		result->Add(x0[0]);
 		result->Add(x0[1]);
-		Int32 i = 2;
+		i = 2;
 		while (true) {
 			iterations++;
 			num1 = getX1(result[i - 1]);
@@ -59,18 +63,19 @@ Int16 TranscendentalEquations::JakobiMethod(List<Double>^ result, Double precis)
 			}
 			result->Add(num1);
 			result->Add(num2);
-			Double delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
+			delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
 			if (delta <= precis) {
 				return 1;
 			}
 			i += 2;
 		}
 	}
+
 /* 2 */
 	if (a[1][0] != 0 && a[0][1] != 0 && checkInitApprox(2)) {
 		result->Add(x0[0]);
 		result->Add(x0[1]);
-		Int32 i = 2;
+		i = 2;
 		while (true) {
 			iterations++;
 			num1 = getX2(result[i - 1]);
@@ -81,7 +86,7 @@ Int16 TranscendentalEquations::JakobiMethod(List<Double>^ result, Double precis)
 			}
 			result->Add(num1);
 			result->Add(num2);
-			Double delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
+			delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
 			if (delta <= precis) {
 				return 1;
 			}
@@ -103,13 +108,17 @@ Int16 TranscendentalEquations::ZeydelMethod(List<Double>^ result, Double precis)
 		(a[1][2] == -1 && (a[1][0] == 0 || a[1][1] == 0))) {
 		return -2;
 	}
-	Double num1, num2;
-	Boolean flag = true;
+
+	Double num1, num2;		// Змінні для тимчасового збереження результатів обчислення коренів.
+	Boolean flag = true;	// Прапорець, який визначає, чи вдалося розв’язати систему рівнянь.
+	Double delta;			// Різниця між значеннями коренів на сусідніх ітераціях.
+	Int32 i;				// Лічильник ітерацій.
+
 /* 1 */
 	if (a[0][0] != 0 && a[1][1] != 0 && checkInitApprox(1)) {
 		result->Add(x0[0]);
 		result->Add(x0[1]);
-		Int32 i = 2;
+		i = 2;
 		while (true) {
 			iterations++;
 			num1 = getX1(result[i - 1]);
@@ -127,18 +136,19 @@ Int16 TranscendentalEquations::ZeydelMethod(List<Double>^ result, Double precis)
 				break;
 			}
 			result->Add(num2);
-			Double delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
+			delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
 			if (delta <= precis) {
 				return 1;
 			}
 			i += 2;
 		}
 	}
+
 /* 2 */
 	if (a[1][0] != 0 && a[0][1] != 0 && checkInitApprox(2)) {
 		result->Add(x0[0]);
 		result->Add(x0[1]);
-		Int32 i = 2;
+		i = 2;
 		while (true) {
 			iterations++;
 			num1 = getX2(result[i - 1]);
@@ -154,7 +164,7 @@ Int16 TranscendentalEquations::ZeydelMethod(List<Double>^ result, Double precis)
 				return -3;
 			}
 			result->Add(num2);
-			Double delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
+			delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
 			if (delta <= precis) {
 				return 1;
 			}

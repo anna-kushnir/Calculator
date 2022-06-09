@@ -13,17 +13,15 @@ namespace Question_FormNamespace {
 	/// </summary>
 	public ref class Question_Form : public System::Windows::Forms::Form
 	{
-	public:
 		/// <summary>
 		/// Створює форму Question_Form та ініціалізує її компоненти.
 		/// </summary>
-		Question_Form(void);
+	public: Question_Form(void);
 
-	protected:
 		/// <summary>
 		/// Видаляє всі використовувані формою Question_Form компоненти.
 		/// </summary>
-		~Question_Form();
+	protected: ~Question_Form();
 
 	/// <summary>
 	/// Ліва межа побудови графіків (від якого значення координати x потрібно будувати графік).
@@ -58,11 +56,10 @@ namespace Question_FormNamespace {
 	/// </summary>
 	private: System::Windows::Forms::Label^ labelTo;
 
-	private:
-		/// <summary>
-		/// Необхідна змінна для зберігання компонентів графічного дизайну.
-		/// </summary>
-		System::ComponentModel::Container^ components;
+	/// <summary>
+	/// Необхідна змінна для зберігання компонентів графічного дизайну.
+	/// </summary>
+	private: System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -170,16 +167,16 @@ namespace Question_FormNamespace {
 
 		}
 #pragma endregion
-    /// <summary>
-    /// Сканує введені користувачем межі для побудови графіків і закриває вікно форми.
-    /// </summary>
+	/// <summary>
+	/// Сканує введені користувачем межі для побудови графіків і закриває вікно форми.
+	/// </summary>
 	/// <param name = 'sender'>Об’єкт класу Object^</param>
 	/// <param name = 'e'>Об'єкт класу EventArgs^</param>
 	/// <returns>Значення типу Void.</returns>
     private: System::Void btnAccept_Click(System::Object^ sender, System::EventArgs^ e);
-    /// <summary>
-    /// Повертає значення лівої межі побудови графіків.
-    /// </summary>
+	/// <summary>
+	/// Повертає значення лівої межі побудови графіків.
+	/// </summary>
 	/// <returns>Значення типу Double.</returns>
     public: Double getXFrom();
 	/// <summary>

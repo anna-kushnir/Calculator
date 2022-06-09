@@ -36,19 +36,12 @@ System::Void CalculatorNamespace::Calculator_Form::Calculator_FormClosing(System
 	if (MessageBox::Show(output, "Вихід", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::No) {
 		e->Cancel = true;
 	}
-	else {
-		result->Clear();
-		result = nullptr;
-		delete result;
-	}
 }
-
 System::Void CalculatorNamespace::Calculator_Form::btnStart_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	result->Clear();
 	ResultBox->Text = "";
-	
-	Double precis;
+	Double precis;		// Змінна для зчитування точності.
 	try {
 		precis = Convert::ToDouble(tblPrecision->Text);
 		if (precis <= 0) throw "Uncorrect";
@@ -83,10 +76,10 @@ System::Void CalculatorNamespace::Calculator_Form::btnDrawGraph_Click(System::Ob
 
 	tblYourEquation->Text = "Введена система рівнянь:\n" + equations->getEquations();
 
-	Question_FormNamespace::Question_Form^ childForm = gcnew Question_FormNamespace::Question_Form;
+	Question_FormNamespace::Question_Form^ childForm = gcnew Question_FormNamespace::Question_Form;		// Форма для введення меж побудови графіків.
 	childForm->ShowDialog();
-	Double from = childForm->getXFrom();
-	Double to = childForm->getXTo();
+	Double from = childForm->getXFrom();	// Ліва межа побудови графіків.
+	Double to = childForm->getXTo();		// Права межа побудови графіків.
 	drawGraph(from, to, 1);	
 }
 System::Void CalculatorNamespace::Calculator_Form::btnClear_Click(System::Object^ sender, System::EventArgs^ e)
@@ -197,7 +190,7 @@ System::Void CalculatorNamespace::Calculator_Form::clear()
 System::Void CalculatorNamespace::Calculator_Form::saveNewResult()
 {
 	try {
-		SaveFileDialog^ saveResultDialog = gcnew SaveFileDialog();
+		SaveFileDialog^ saveResultDialog = gcnew SaveFileDialog();		// Вікно збереження результату.
 		saveResultDialog->Filter = "Text file (.txt)|*.txt";
 		saveResultDialog->Title = "Збереження результату";
 		if (saveResultDialog->ShowDialog() == Windows::Forms::DialogResult::Cancel) {
@@ -218,7 +211,7 @@ System::Void CalculatorNamespace::Calculator_Form::saveNewResult()
 System::Void CalculatorNamespace::Calculator_Form::drawGraph(Double a, Double b, Int16 flag)
 {
 	if (flag == 2 && result->Count != 0) {
-		a = Math::Floor(result[result->Count - 2]) - 10;
+		a = Math::Floor(result[result->Count - 2] * 10) / 10 - 10;
 		b = a + 20;
 	}
 	graphEquations->Series[0]->Points->Clear();
@@ -226,8 +219,8 @@ System::Void CalculatorNamespace::Calculator_Form::drawGraph(Double a, Double b,
 	graphEquations->Series[2]->Points->Clear();
 	graphEquations->Series[3]->Points->Clear();
 
-	Int16 flagGraph;
-	Double step = 0.01;
+	Int16 flagGraph;		// Прапорець, який визначає чи вдалося побудувати графіки.
+	Double step = 0.01;		// Крок побудови графіків.
 	switch (equations->getId()) {
 	case 1:
 		flagGraph = drawGraphArithmetic(a, b, step);
@@ -255,10 +248,11 @@ System::Void CalculatorNamespace::Calculator_Form::drawGraph(Double a, Double b,
 }
 System::Int16 CalculatorNamespace::Calculator_Form::drawGraphArithmetic(Double a, Double b, Double step)
 {
-	Double x, y1, y2;
-	Boolean flag1 = false, flag2 = false;
-	if ((equations->getCoef()[0][0] >= 0 && equations->getCoef()[0][1] <= 0 && equations->getCoef()[0][2] <= 0) ||
-		(equations->getCoef()[0][0] <= 0 && equations->getCoef()[0][1] >= 0 && equations->getCoef()[0][2] >= 0)) {
+	Double x, y1, y2;			// Змінні для збереження координат.
+	Boolean flag1 = false,		// Прапорець, який визначає чи вдалося побудувати графік першого рівняння системи.
+		flag2 = false;			// Прапорець, який визначає чи вдалося побудувати графік другого рівняння системи.
+	if ((equations->getCoef()[0][0] > 0 && equations->getCoef()[0][1] < 0 && equations->getCoef()[0][2] < 0) ||
+		(equations->getCoef()[0][0] < 0 && equations->getCoef()[0][1] > 0 && equations->getCoef()[0][2] > 0)) {
 		x = a;
 		while (x <= (b - a) / 2 + a) {
 			y1 = equations->getY1(x);
@@ -313,8 +307,8 @@ System::Int16 CalculatorNamespace::Calculator_Form::drawGraphArithmetic(Double a
 			x -= step;
 		}
 	}
-	if ((equations->getCoef()[1][0] >= 0 && equations->getCoef()[1][1] <= 0 && equations->getCoef()[1][2] <= 0) ||
-		(equations->getCoef()[1][0] <= 0 && equations->getCoef()[1][1] >= 0 && equations->getCoef()[1][2] >= 0)) {
+	if ((equations->getCoef()[1][0] > 0 && equations->getCoef()[1][1] < 0 && equations->getCoef()[1][2] < 0) ||
+		(equations->getCoef()[1][0] < 0 && equations->getCoef()[1][1] > 0 && equations->getCoef()[1][2] > 0)) {
 		x = a;
 		while (x <= (b - a) / 2 + a) {
 			y2 = equations->getY2(x);
@@ -376,8 +370,9 @@ System::Int16 CalculatorNamespace::Calculator_Form::drawGraphArithmetic(Double a
 }
 System::Int16 CalculatorNamespace::Calculator_Form::drawGraphTrigonometric(Double a, Double b, Double step)
 {
-	Double x, y1, y2, x1;
-	Boolean flag1 = false, flag2 = false;
+	Double x, y1, y2, x1;		// Змінні для збереження координат.
+	Boolean flag1 = false,		// Прапорець, який визначає чи вдалося побудувати графік першого рівняння системи.
+		flag2 = false;			// Прапорець, який визначає чи вдалося побудувати графік другого рівняння системи.
 	x = a;
 	y1 = equations->getY1(x);
 	if (isfinite(y1)) {
@@ -429,8 +424,9 @@ System::Int16 CalculatorNamespace::Calculator_Form::drawGraphTrigonometric(Doubl
 }
 System::Int16 CalculatorNamespace::Calculator_Form::drawGraphTranscendental(Double a, Double b, Double step)
 {
-	Double x, y1, y2;
-	Boolean flag1 = false, flag2 = false;
+	Double x, y1, y2;			// Змінні для збереження координат.
+	Boolean flag1 = false,		// Прапорець, який визначає чи вдалося побудувати графік першого рівняння системи.
+		flag2 = false;			// Прапорець, який визначає чи вдалося побудувати графік другого рівняння системи.
 	x = a;
 	while (x <= b) {
 		y1 = equations->getY1(x);
@@ -487,7 +483,7 @@ System::Void CalculatorNamespace::Calculator_Form::outputResult(Int16 flag)
 System::Void CalculatorNamespace::Calculator_Form::outputIterations()
 {
 	ResultBox->Text = "Результати ітераційного процесу:";
-	Int16 i = 1;
+	Int16 i = 1;		// Лічильник циклу.
 	for each (Double iter in result)
 	{
 		if (i % 2 == 1) {
@@ -506,8 +502,8 @@ System::Void CalculatorNamespace::Calculator_Form::outputIterations()
 }
 System::Boolean CalculatorNamespace::Calculator_Form::initializeEquationsToSolve()
 {
-	Double** coef = new Double * [2];
-	Double* initX = new Double[2];
+	Double** coef = new Double * [2];	// Масив коефіцієнтів.
+	Double* initX = new Double[2];		// Масив початкових наближень.
 	for (Int16 i = 0; i < 2; ++i) {
 		coef[i] = new Double[3];
 	}
@@ -547,7 +543,7 @@ System::Boolean CalculatorNamespace::Calculator_Form::initializeEquationsToSolve
 }
 System::Boolean CalculatorNamespace::Calculator_Form::initializeEquationsToDrawGraph()
 {
-	Double** coef = new Double * [2];
+	Double** coef = new Double * [2];	// Масив коефіцієнтів.
 	for (Int16 i = 0; i < 2; ++i) {
 		coef[i] = new Double[3];
 	}
@@ -586,7 +582,7 @@ System::Boolean CalculatorNamespace::Calculator_Form::initializeEquationsToDrawG
 }
 System::Void CalculatorNamespace::Calculator_Form::solve(Double precis)
 {
-	Int16 flag;
+	Int16 flag;		// Прапорець, який визначає, чи вдалося розв’язати систему рівнянь.
 	if (btnJakobiMethod->Checked) {
 		solvingBegin();
 		try {

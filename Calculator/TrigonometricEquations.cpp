@@ -41,28 +41,32 @@ Int16 TrigonometricEquations::JakobiMethod(List<Double>^ result, Double precis)
 		return 0;
 	}
 
-	Double num1, num2;
+	Double num1, num2;		// Змінні для тимчасового збереження результатів обчислення коренів.
+	Double delta;			// Різниця між значеннями коренів на сусідніх ітераціях.
+	Int32 i;				// Лічильник ітерацій.
+
 /* 1 */
 	if (a[1][0] != 0 && a[0][1] != 0 && checkInitApprox(1)) {
 		result->Add(x0[0]);
 		result->Add(x0[1]);
-		Int32 i = 2;
+		i = 2;
 		while (true) {
 			iterations++;
 			result->Add(getX2(result[i - 1]));
 			result->Add(getY1(result[i - 2]));
-			Double delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
+			delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
 			if (delta <= precis) {
 				return 1;
 			}
 			i += 2;
 		}
 	}
+
 /* 2 */
 	if (checkInitApprox(2)) {
 		result->Add(x0[0]);
 		result->Add(x0[1]);
-		Int32 i = 2;
+		i = 2;
 		while (true) {
 			iterations++;
 			num1 = getX1(result[i - 1]);
@@ -73,7 +77,7 @@ Int16 TrigonometricEquations::JakobiMethod(List<Double>^ result, Double precis)
 			}
 			result->Add(num1);
 			result->Add(num2);
-			Double delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
+			delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
 			if (delta <= precis) {
 				return 1;
 			}
@@ -94,28 +98,32 @@ Int16 TrigonometricEquations::ZeydelMethod(List<Double>^ result, Double precis)
 		return 0;
 	}
 
-	Double num1, num2;
+	Double num1, num2;		// Змінні для тимчасового збереження результатів обчислення коренів.
+	Double delta;			// Різниця між значеннями коренів на сусідніх ітераціях.
+	Int32 i;				// Лічильник ітерацій.
+
 /* 1 */
 	if (a[1][0] != 0 && a[0][1] != 0 && checkInitApprox(1)) {
 		result->Add(x0[0]);
 		result->Add(x0[1]);
-		Int32 i = 2;
+		i = 2;
 		while (true) {
 			iterations++;
 			result->Add(getX2(result[i - 1]));
 			result->Add(getY1(result[i]));
-			Double delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
+			delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
 			if (delta <= precis) {
 				return 1;
 			}
 			i += 2;
 		}
 	}
+
 /* 2 */
 	if (checkInitApprox(2)) {
 		result->Add(x0[0]);
 		result->Add(x0[1]);
-		Int32 i = 2;
+		i = 2;
 		while (true) {
 			iterations++;
 			num1 = getX1(result[i - 1]);
@@ -131,7 +139,7 @@ Int16 TrigonometricEquations::ZeydelMethod(List<Double>^ result, Double precis)
 				return -3;
 			}
 			result->Add(num2);
-			Double delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
+			delta = Math::Max(Math::Abs(result[i] - result[i - 2]), Math::Abs(result[i + 1] - result[i - 1]));
 			if (delta <= precis) {
 				return 1;
 			}
