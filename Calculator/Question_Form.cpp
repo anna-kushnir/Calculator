@@ -1,4 +1,4 @@
-#include "pch.h"
+п»ї#include "pch.h"
 #include "Question_Form.h"
 using namespace System;
 
@@ -23,7 +23,7 @@ System::Void Question_FormNamespace::Question_Form::btnAccept_Click(System::Obje
 		x2 = Convert::ToDouble(tblTo->Text);
 	}
 	catch (...) {
-		MessageBox::Show("Не коректний ввід числових даних!", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		MessageBox::Show("РќРµ РєРѕСЂРµРєС‚РЅРёР№ РІРІС–Рґ С‡РёСЃР»РѕРІРёС… РґР°РЅРёС…!", "РџРѕРјРёР»РєР°!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		return;
 	}
 	Close();

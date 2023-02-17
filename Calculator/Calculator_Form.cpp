@@ -1,4 +1,4 @@
-#include "pch.h"
+п»ї#include "pch.h"
 #include "Calculator_Form.h"
 #include "ArithmeticEquations.h"
 #include "TrigonometricEquations.h"
@@ -7,12 +7,12 @@
 CalculatorNamespace::Calculator_Form::Calculator_Form(void)
 {
 	InitializeComponent();
-	String^ output = ("Щоб розв'язати систему двох нелінійних рівнянь, оберіть вид системи та метод її розв'язання, " +
-		"введіть коефіцієнти, початкові наближення та точність обчислення розв'язку системи.\nДалі натисніть \"Розв'язати\"." +
-		"\n\nЯкщо ви не знаєте початкові наближення розв'язку, оберіть вид системи та введіть коефіцієнти рівнянь." +
-		"\nДалі натисніть \"Побудувати графік для визначення початкових наближень\" і у вікні, що з'явиться, введіть інтервал по X, " +
-		"на якому бажаєте побудувати графік.\nЗа побудованим графіком ви зможете самостійно визначити орієнтовний наближений розв'язок.");
-	MessageBox::Show(output, "Вітання!", MessageBoxButtons::OK, MessageBoxIcon::None, MessageBoxDefaultButton::Button1);
+	String^ output = ("Р©РѕР± СЂРѕР·РІ'СЏР·Р°С‚Рё СЃРёСЃС‚РµРјСѓ РґРІРѕС… РЅРµР»С–РЅС–Р№РЅРёС… СЂС–РІРЅСЏРЅСЊ, РѕР±РµСЂС–С‚СЊ РІРёРґ СЃРёСЃС‚РµРјРё С‚Р° РјРµС‚РѕРґ С—С— СЂРѕР·РІ'СЏР·Р°РЅРЅСЏ, " +
+		"РІРІРµРґС–С‚СЊ РєРѕРµС„С–С†С–С”РЅС‚Рё, РїРѕС‡Р°С‚РєРѕРІС– РЅР°Р±Р»РёР¶РµРЅРЅСЏ С‚Р° С‚РѕС‡РЅС–СЃС‚СЊ РѕР±С‡РёСЃР»РµРЅРЅСЏ СЂРѕР·РІ'СЏР·РєСѓ СЃРёСЃС‚РµРјРё.\nР”Р°Р»С– РЅР°С‚РёСЃРЅС–С‚СЊ \"Р РѕР·РІ'СЏР·Р°С‚Рё\"." +
+		"\n\nРЇРєС‰Рѕ РІРё РЅРµ Р·РЅР°С”С‚Рµ РїРѕС‡Р°С‚РєРѕРІС– РЅР°Р±Р»РёР¶РµРЅРЅСЏ СЂРѕР·РІ'СЏР·РєСѓ, РѕР±РµСЂС–С‚СЊ РІРёРґ СЃРёСЃС‚РµРјРё С‚Р° РІРІРµРґС–С‚СЊ РєРѕРµС„С–С†С–С”РЅС‚Рё СЂС–РІРЅСЏРЅСЊ." +
+		"\nР”Р°Р»С– РЅР°С‚РёСЃРЅС–С‚СЊ \"РџРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє РґР»СЏ РІРёР·РЅР°С‡РµРЅРЅСЏ РїРѕС‡Р°С‚РєРѕРІРёС… РЅР°Р±Р»РёР¶РµРЅСЊ\" С– Сѓ РІС–РєРЅС–, С‰Рѕ Р·'СЏРІРёС‚СЊСЃСЏ, РІРІРµРґС–С‚СЊ С–РЅС‚РµСЂРІР°Р» РїРѕ X, " +
+		"РЅР° СЏРєРѕРјСѓ Р±Р°Р¶Р°С”С‚Рµ РїРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє.\nР—Р° РїРѕР±СѓРґРѕРІР°РЅРёРј РіСЂР°С„С–РєРѕРј РІРё Р·РјРѕР¶РµС‚Рµ СЃР°РјРѕСЃС‚С–Р№РЅРѕ РІРёР·РЅР°С‡РёС‚Рё РѕСЂС–С”РЅС‚РѕРІРЅРёР№ РЅР°Р±Р»РёР¶РµРЅРёР№ СЂРѕР·РІ'СЏР·РѕРє.");
+	MessageBox::Show(output, "Р’С–С‚Р°РЅРЅСЏ!", MessageBoxButtons::OK, MessageBoxIcon::None, MessageBoxDefaultButton::Button1);
 }
 CalculatorNamespace::Calculator_Form::~Calculator_Form()
 {
@@ -32,8 +32,8 @@ System::Void CalculatorNamespace::Calculator_Form::Calculator_Load(System::Objec
 }
 System::Void CalculatorNamespace::Calculator_Form::Calculator_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
 {
-	String^ output = "Ви дійсно бажаєте вийти?\nПрограма втратить шлях до останнього збереженого результату.";
-	if (MessageBox::Show(output, "Вихід", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::No) {
+	String^ output = "Р’Рё РґС–Р№СЃРЅРѕ Р±Р°Р¶Р°С”С‚Рµ РІРёР№С‚Рё?\nРџСЂРѕРіСЂР°РјР° РІС‚СЂР°С‚РёС‚СЊ С€Р»СЏС… РґРѕ РѕСЃС‚Р°РЅРЅСЊРѕРіРѕ Р·Р±РµСЂРµР¶РµРЅРѕРіРѕ СЂРµР·СѓР»СЊС‚Р°С‚Сѓ.";
+	if (MessageBox::Show(output, "Р’РёС…С–Рґ", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::No) {
 		e->Cancel = true;
 	}
 }
@@ -41,17 +41,17 @@ System::Void CalculatorNamespace::Calculator_Form::btnStart_Click(System::Object
 {
 	result->Clear();
 	ResultBox->Text = "";
-	Double precis;		// Змінна для зчитування точності.
+	Double precis;		// Р—РјС–РЅРЅР° РґР»СЏ Р·С‡РёС‚СѓРІР°РЅРЅСЏ С‚РѕС‡РЅРѕСЃС‚С–.
 	try {
 		precis = Convert::ToDouble(tblPrecision->Text);
 		if (precis <= 0) throw "Uncorrect";
 	}
 	catch (const char*) {
-		MessageBox::Show("Точність має бути додатнім числом!", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		MessageBox::Show("РўРѕС‡РЅС–СЃС‚СЊ РјР°С” Р±СѓС‚Рё РґРѕРґР°С‚РЅС–Рј С‡РёСЃР»РѕРј!", "РџРѕРјРёР»РєР°!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		return;
 	}
 	catch (...) {
-		if (MessageBox::Show("Не коректний ввід числових даних!\nОчистити форму?", "Помилка!", MessageBoxButtons::YesNo, MessageBoxIcon::Warning) == System::Windows::Forms::DialogResult::Yes)
+		if (MessageBox::Show("РќРµ РєРѕСЂРµРєС‚РЅРёР№ РІРІС–Рґ С‡РёСЃР»РѕРІРёС… РґР°РЅРёС…!\nРћС‡РёСЃС‚РёС‚Рё С„РѕСЂРјСѓ?", "РџРѕРјРёР»РєР°!", MessageBoxButtons::YesNo, MessageBoxIcon::Warning) == System::Windows::Forms::DialogResult::Yes)
 		{
 			clear();
 		}
@@ -74,12 +74,12 @@ System::Void CalculatorNamespace::Calculator_Form::btnDrawGraph_Click(System::Ob
 	
 	if (!initializeEquationsToDrawGraph()) return;
 
-	tblYourEquation->Text = "Введена система рівнянь:\n" + equations->getEquations();
+	tblYourEquation->Text = "Р’РІРµРґРµРЅР° СЃРёСЃС‚РµРјР° СЂС–РІРЅСЏРЅСЊ:\n" + equations->getEquations();
 
-	Question_FormNamespace::Question_Form^ childForm = gcnew Question_FormNamespace::Question_Form;		// Форма для введення меж побудови графіків.
+	Question_FormNamespace::Question_Form^ childForm = gcnew Question_FormNamespace::Question_Form;		// Р¤РѕСЂРјР° РґР»СЏ РІРІРµРґРµРЅРЅСЏ РјРµР¶ РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ.
 	childForm->ShowDialog();
-	Double from = childForm->getXFrom();	// Ліва межа побудови графіків.
-	Double to = childForm->getXTo();		// Права межа побудови графіків.
+	Double from = childForm->getXFrom();	// Р›С–РІР° РјРµР¶Р° РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ.
+	Double to = childForm->getXTo();		// РџСЂР°РІР° РјРµР¶Р° РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ.
 	drawGraph(from, to, 1);	
 }
 System::Void CalculatorNamespace::Calculator_Form::btnClear_Click(System::Object^ sender, System::EventArgs^ e)
@@ -102,7 +102,7 @@ System::Void CalculatorNamespace::Calculator_Form::menuSaveResult_Click(System::
 			menuSeeLast->Enabled = true;
 		}
 		catch (...) {
-			MessageBox::Show("Не вдалося зберегти результат!", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("РќРµ РІРґР°Р»РѕСЃСЏ Р·Р±РµСЂРµРіС‚Рё СЂРµР·СѓР»СЊС‚Р°С‚!", "РџРѕРјРёР»РєР°!", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
 	}
@@ -117,20 +117,20 @@ System::Void CalculatorNamespace::Calculator_Form::menuSeeLast_Click(System::Obj
 		System::Diagnostics::Process::Start("notepad.exe", path);
 	}
 	catch (...) {
-		MessageBox::Show("Не вдалося відкрити файл!", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		MessageBox::Show("РќРµ РІРґР°Р»РѕСЃСЏ РІС–РґРєСЂРёС‚Рё С„Р°Р№Р»!", "РџРѕРјРёР»РєР°!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		return;
 	}
 }
 System::Void CalculatorNamespace::Calculator_Form::menuInfo_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	String^ output = ("Щоб розв'язати систему двох нелінійних рівнянь, оберіть вид системи та метод її розв'язання, " +
-		"введіть коефіцієнти, початкові наближення та точність обчислення розв'язку системи.\nДалі натисніть \"Розв'язати\"." +
-		"\n\nЯкщо ви не знаєте початкові наближення розв'язку, оберіть вид системи та введіть коефіцієнти рівнянь." +
-		"\nДалі натисніть \"Побудувати графік для визначення початкових наближень\" і у вікні, що з'явиться, введіть інтервал по X, " +
-		"на якому бажаєте побудувати графік.\nЗа побудованим графіком ви зможете самостійно визначити орієнтовний наближений розв'язок." +
+	String^ output = ("Р©РѕР± СЂРѕР·РІ'СЏР·Р°С‚Рё СЃРёСЃС‚РµРјСѓ РґРІРѕС… РЅРµР»С–РЅС–Р№РЅРёС… СЂС–РІРЅСЏРЅСЊ, РѕР±РµСЂС–С‚СЊ РІРёРґ СЃРёСЃС‚РµРјРё С‚Р° РјРµС‚РѕРґ С—С— СЂРѕР·РІ'СЏР·Р°РЅРЅСЏ, " +
+		"РІРІРµРґС–С‚СЊ РєРѕРµС„С–С†С–С”РЅС‚Рё, РїРѕС‡Р°С‚РєРѕРІС– РЅР°Р±Р»РёР¶РµРЅРЅСЏ С‚Р° С‚РѕС‡РЅС–СЃС‚СЊ РѕР±С‡РёСЃР»РµРЅРЅСЏ СЂРѕР·РІ'СЏР·РєСѓ СЃРёСЃС‚РµРјРё.\nР”Р°Р»С– РЅР°С‚РёСЃРЅС–С‚СЊ \"Р РѕР·РІ'СЏР·Р°С‚Рё\"." +
+		"\n\nРЇРєС‰Рѕ РІРё РЅРµ Р·РЅР°С”С‚Рµ РїРѕС‡Р°С‚РєРѕРІС– РЅР°Р±Р»РёР¶РµРЅРЅСЏ СЂРѕР·РІ'СЏР·РєСѓ, РѕР±РµСЂС–С‚СЊ РІРёРґ СЃРёСЃС‚РµРјРё С‚Р° РІРІРµРґС–С‚СЊ РєРѕРµС„С–С†С–С”РЅС‚Рё СЂС–РІРЅСЏРЅСЊ." +
+		"\nР”Р°Р»С– РЅР°С‚РёСЃРЅС–С‚СЊ \"РџРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє РґР»СЏ РІРёР·РЅР°С‡РµРЅРЅСЏ РїРѕС‡Р°С‚РєРѕРІРёС… РЅР°Р±Р»РёР¶РµРЅСЊ\" С– Сѓ РІС–РєРЅС–, С‰Рѕ Р·'СЏРІРёС‚СЊСЃСЏ, РІРІРµРґС–С‚СЊ С–РЅС‚РµСЂРІР°Р» РїРѕ X, " +
+		"РЅР° СЏРєРѕРјСѓ Р±Р°Р¶Р°С”С‚Рµ РїРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє.\nР—Р° РїРѕР±СѓРґРѕРІР°РЅРёРј РіСЂР°С„С–РєРѕРј РІРё Р·РјРѕР¶РµС‚Рµ СЃР°РјРѕСЃС‚С–Р№РЅРѕ РІРёР·РЅР°С‡РёС‚Рё РѕСЂС–С”РЅС‚РѕРІРЅРёР№ РЅР°Р±Р»РёР¶РµРЅРёР№ СЂРѕР·РІ'СЏР·РѕРє." +
 		"\n\nEnvironment:\n              Microsoft Visual Studio Community 2022\n              Version 17.2.1\n" +
 		"\nDeveloped by: \n              Hanna Kushnir");
-	MessageBox::Show(output, "Інформація", MessageBoxButtons::OK, MessageBoxIcon::None, MessageBoxDefaultButton::Button1);
+	MessageBox::Show(output, "Р†РЅС„РѕСЂРјР°С†С–СЏ", MessageBoxButtons::OK, MessageBoxIcon::None, MessageBoxDefaultButton::Button1);
 }
 System::Void CalculatorNamespace::Calculator_Form::btnJakobiMethod_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -164,7 +164,7 @@ System::Void CalculatorNamespace::Calculator_Form::clear()
 	btnArithmEq->Checked = false;
 	btnTrigonomEq->Checked = false;
 	btnTranscEq->Checked = false;
-	btnMethod->Text = "Оберіть метод розв'язання";
+	btnMethod->Text = "РћР±РµСЂС–С‚СЊ РјРµС‚РѕРґ СЂРѕР·РІ'СЏР·Р°РЅРЅСЏ";
 	btnJakobiMethod->Checked = false;
 	btnZeydelMethod->Checked = false;
 	for (Int16 i = 0; i < 2; ++i) {
@@ -190,9 +190,9 @@ System::Void CalculatorNamespace::Calculator_Form::clear()
 System::Void CalculatorNamespace::Calculator_Form::saveNewResult()
 {
 	try {
-		SaveFileDialog^ saveResultDialog = gcnew SaveFileDialog();		// Вікно збереження результату.
+		SaveFileDialog^ saveResultDialog = gcnew SaveFileDialog();		// Р’С–РєРЅРѕ Р·Р±РµСЂРµР¶РµРЅРЅСЏ СЂРµР·СѓР»СЊС‚Р°С‚Сѓ.
 		saveResultDialog->Filter = "Text file (.txt)|*.txt";
-		saveResultDialog->Title = "Збереження результату";
+		saveResultDialog->Title = "Р—Р±РµСЂРµР¶РµРЅРЅСЏ СЂРµР·СѓР»СЊС‚Р°С‚Сѓ";
 		if (saveResultDialog->ShowDialog() == Windows::Forms::DialogResult::Cancel) {
 			return;
 		}
@@ -202,10 +202,10 @@ System::Void CalculatorNamespace::Calculator_Form::saveNewResult()
 		}
 	}
 	catch (...) {
-		MessageBox::Show("Не вдалося зберегти результат!", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show("РќРµ РІРґР°Р»РѕСЃСЏ Р·Р±РµСЂРµРіС‚Рё СЂРµР·СѓР»СЊС‚Р°С‚!", "РџРѕРјРёР»РєР°!", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		return;
 	}
-	MessageBox::Show("Ваш результат успішно збережено!", "Успішно!", MessageBoxButtons::OK, MessageBoxIcon::None); 
+	MessageBox::Show("Р’Р°С€ СЂРµР·СѓР»СЊС‚Р°С‚ СѓСЃРїС–С€РЅРѕ Р·Р±РµСЂРµР¶РµРЅРѕ!", "РЈСЃРїС–С€РЅРѕ!", MessageBoxButtons::OK, MessageBoxIcon::None); 
 	menuSeeLast->Enabled = true;
 }
 System::Void CalculatorNamespace::Calculator_Form::drawGraph(Double a, Double b, Int16 flag)
@@ -219,8 +219,8 @@ System::Void CalculatorNamespace::Calculator_Form::drawGraph(Double a, Double b,
 	graphEquations->Series[2]->Points->Clear();
 	graphEquations->Series[3]->Points->Clear();
 
-	Int16 flagGraph;		// Прапорець, який визначає чи вдалося побудувати графіки.
-	Double step = 0.01;		// Крок побудови графіків.
+	Int16 flagGraph;		// РџСЂР°РїРѕСЂРµС†СЊ, СЏРєРёР№ РІРёР·РЅР°С‡Р°С” С‡Рё РІРґР°Р»РѕСЃСЏ РїРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–РєРё.
+	Double step = 0.01;		// РљСЂРѕРє РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ.
 	switch (equations->getId()) {
 	case 1:
 		flagGraph = drawGraphArithmetic(a, b, step);
@@ -235,26 +235,26 @@ System::Void CalculatorNamespace::Calculator_Form::drawGraph(Double a, Double b,
 	
 	switch (flagGraph) {
 	case -3:
-		MessageBox::Show("Не вдалося побудувати графіки для рівнянь системи.", "Помилка", MessageBoxButtons::OK, MessageBoxIcon::None);
+		MessageBox::Show("РќРµ РІРґР°Р»РѕСЃСЏ РїРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–РєРё РґР»СЏ СЂС–РІРЅСЏРЅСЊ СЃРёСЃС‚РµРјРё.", "РџРѕРјРёР»РєР°", MessageBoxButtons::OK, MessageBoxIcon::None);
 		graphEquations->Visible = false;
 		break;
 	case -1:
-		MessageBox::Show("Не вдалося побудувати графік для першого рівняння системи.", "Помилка", MessageBoxButtons::OK, MessageBoxIcon::None);
+		MessageBox::Show("РќРµ РІРґР°Р»РѕСЃСЏ РїРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє РґР»СЏ РїРµСЂС€РѕРіРѕ СЂС–РІРЅСЏРЅРЅСЏ СЃРёСЃС‚РµРјРё.", "РџРѕРјРёР»РєР°", MessageBoxButtons::OK, MessageBoxIcon::None);
 		break;
 	case -2:
-		MessageBox::Show("Не вдалося побудувати графік для другого рівняння системи.", "Помилка", MessageBoxButtons::OK, MessageBoxIcon::None);
+		MessageBox::Show("РќРµ РІРґР°Р»РѕСЃСЏ РїРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє РґР»СЏ РґСЂСѓРіРѕРіРѕ СЂС–РІРЅСЏРЅРЅСЏ СЃРёСЃС‚РµРјРё.", "РџРѕРјРёР»РєР°", MessageBoxButtons::OK, MessageBoxIcon::None);
 		break;	
 	}
 }
 System::Int16 CalculatorNamespace::Calculator_Form::drawGraphArithmetic(Double a, Double b, Double step)
 {
-	Double x, y1, y2;			// Змінні для збереження координат.
-	Boolean flag1 = false,		// Прапорець, який визначає чи вдалося побудувати графік першого рівняння системи.
-		flag2 = false;			// Прапорець, який визначає чи вдалося побудувати графік другого рівняння системи.
+	Double x, y1, y2;			// Р—РјС–РЅРЅС– РґР»СЏ Р·Р±РµСЂРµР¶РµРЅРЅСЏ РєРѕРѕСЂРґРёРЅР°С‚.
+	Boolean flag1 = false,		// РџСЂР°РїРѕСЂРµС†СЊ, СЏРєРёР№ РІРёР·РЅР°С‡Р°С” С‡Рё РІРґР°Р»РѕСЃСЏ РїРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє РїРµСЂС€РѕРіРѕ СЂС–РІРЅСЏРЅРЅСЏ СЃРёСЃС‚РµРјРё.
+		flag2 = false;			// РџСЂР°РїРѕСЂРµС†СЊ, СЏРєРёР№ РІРёР·РЅР°С‡Р°С” С‡Рё РІРґР°Р»РѕСЃСЏ РїРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє РґСЂСѓРіРѕРіРѕ СЂС–РІРЅСЏРЅРЅСЏ СЃРёСЃС‚РµРјРё.
 	if ((equations->getCoef()[0][0] > 0 && equations->getCoef()[0][1] < 0 && equations->getCoef()[0][2] < 0) ||
 		(equations->getCoef()[0][0] < 0 && equations->getCoef()[0][1] > 0 && equations->getCoef()[0][2] > 0)) {
 		x = a;
-		while (x <= (b - a) / 2 + a) {
+		while (x <= 0) {
 			y1 = equations->getY1(x);
 			if (isfinite(y1)) {
 				graphEquations->Series[0]->Points->AddXY(x, y1);
@@ -271,7 +271,7 @@ System::Int16 CalculatorNamespace::Calculator_Form::drawGraphArithmetic(Double a
 			x -= step;
 		}
 		x = b;
-		while (x >= (b - a) / 2 + a) {
+		while (x >= 0) {
 			y1 = equations->getY1(x);
 			if (isfinite(y1)) {
 				graphEquations->Series[2]->Points->AddXY(x, y1);
@@ -310,7 +310,7 @@ System::Int16 CalculatorNamespace::Calculator_Form::drawGraphArithmetic(Double a
 	if ((equations->getCoef()[1][0] > 0 && equations->getCoef()[1][1] < 0 && equations->getCoef()[1][2] < 0) ||
 		(equations->getCoef()[1][0] < 0 && equations->getCoef()[1][1] > 0 && equations->getCoef()[1][2] > 0)) {
 		x = a;
-		while (x <= (b - a) / 2 + a) {
+		while (x <= 0) {
 			y2 = equations->getY2(x);
 			if (isfinite(y2)) {
 				graphEquations->Series[1]->Points->AddXY(x, y2);
@@ -327,7 +327,7 @@ System::Int16 CalculatorNamespace::Calculator_Form::drawGraphArithmetic(Double a
 			x -= step;
 		}
 		x = b;
-		while (x >= (b - a) / 2 + a) {
+		while (x >= 0) {
 			y2 = equations->getY2(x);
 			if (isfinite(y2)) {
 				graphEquations->Series[3]->Points->AddXY(x, y2);
@@ -370,9 +370,9 @@ System::Int16 CalculatorNamespace::Calculator_Form::drawGraphArithmetic(Double a
 }
 System::Int16 CalculatorNamespace::Calculator_Form::drawGraphTrigonometric(Double a, Double b, Double step)
 {
-	Double x, y1, y2, x1;		// Змінні для збереження координат.
-	Boolean flag1 = false,		// Прапорець, який визначає чи вдалося побудувати графік першого рівняння системи.
-		flag2 = false;			// Прапорець, який визначає чи вдалося побудувати графік другого рівняння системи.
+	Double x, y1, y2, x1;		// Р—РјС–РЅРЅС– РґР»СЏ Р·Р±РµСЂРµР¶РµРЅРЅСЏ РєРѕРѕСЂРґРёРЅР°С‚.
+	Boolean flag1 = false,		// РџСЂР°РїРѕСЂРµС†СЊ, СЏРєРёР№ РІРёР·РЅР°С‡Р°С” С‡Рё РІРґР°Р»РѕСЃСЏ РїРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє РїРµСЂС€РѕРіРѕ СЂС–РІРЅСЏРЅРЅСЏ СЃРёСЃС‚РµРјРё.
+		flag2 = false;			// РџСЂР°РїРѕСЂРµС†СЊ, СЏРєРёР№ РІРёР·РЅР°С‡Р°С” С‡Рё РІРґР°Р»РѕСЃСЏ РїРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє РґСЂСѓРіРѕРіРѕ СЂС–РІРЅСЏРЅРЅСЏ СЃРёСЃС‚РµРјРё.
 	x = a;
 	y1 = equations->getY1(x);
 	if (isfinite(y1)) {
@@ -424,9 +424,9 @@ System::Int16 CalculatorNamespace::Calculator_Form::drawGraphTrigonometric(Doubl
 }
 System::Int16 CalculatorNamespace::Calculator_Form::drawGraphTranscendental(Double a, Double b, Double step)
 {
-	Double x, y1, y2;			// Змінні для збереження координат.
-	Boolean flag1 = false,		// Прапорець, який визначає чи вдалося побудувати графік першого рівняння системи.
-		flag2 = false;			// Прапорець, який визначає чи вдалося побудувати графік другого рівняння системи.
+	Double x, y1, y2;			// Р—РјС–РЅРЅС– РґР»СЏ Р·Р±РµСЂРµР¶РµРЅРЅСЏ РєРѕРѕСЂРґРёРЅР°С‚.
+	Boolean flag1 = false,		// РџСЂР°РїРѕСЂРµС†СЊ, СЏРєРёР№ РІРёР·РЅР°С‡Р°С” С‡Рё РІРґР°Р»РѕСЃСЏ РїРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє РїРµСЂС€РѕРіРѕ СЂС–РІРЅСЏРЅРЅСЏ СЃРёСЃС‚РµРјРё.
+		flag2 = false;			// РџСЂР°РїРѕСЂРµС†СЊ, СЏРєРёР№ РІРёР·РЅР°С‡Р°С” С‡Рё РІРґР°Р»РѕСЃСЏ РїРѕР±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє РґСЂСѓРіРѕРіРѕ СЂС–РІРЅСЏРЅРЅСЏ СЃРёСЃС‚РµРјРё.
 	x = a;
 	while (x <= b) {
 		y1 = equations->getY1(x);
@@ -454,27 +454,27 @@ System::Void CalculatorNamespace::Calculator_Form::solvingBegin()
 	menuSaveResult->Enabled = true;
 	menuSaveResultAs->Enabled = true;
 	graphEquations->Visible = true;
-	tblYourEquation->Text = "Введена система рівнянь:\n" + equations->getEquations();
+	tblYourEquation->Text = "Р’РІРµРґРµРЅР° СЃРёСЃС‚РµРјР° СЂС–РІРЅСЏРЅСЊ:\n" + equations->getEquations();
 }
 System::Void CalculatorNamespace::Calculator_Form::outputResult(Int16 flag)
 {
 	switch (flag)
 	{
 	case -3:
-		ResultBox->Text = ("Обраний метод не застосовний для розв'язання введеної системи.");
+		ResultBox->Text = ("РћР±СЂР°РЅРёР№ РјРµС‚РѕРґ РЅРµ Р·Р°СЃС‚РѕСЃРѕРІРЅРёР№ РґР»СЏ СЂРѕР·РІ'СЏР·Р°РЅРЅСЏ РІРІРµРґРµРЅРѕС— СЃРёСЃС‚РµРјРё.");
 		return;
 	case -2:
-		ResultBox->Text = "Дана система рівнянь не має розв'язків на множині дійсних чисел.";
+		ResultBox->Text = "Р”Р°РЅР° СЃРёСЃС‚РµРјР° СЂС–РІРЅСЏРЅСЊ РЅРµ РјР°С” СЂРѕР·РІ'СЏР·РєС–РІ РЅР° РјРЅРѕР¶РёРЅС– РґС–Р№СЃРЅРёС… С‡РёСЃРµР».";
 		return;
 	case -1:
-		ResultBox->Text = ("Введені вами початкові наближення призводять до розбіжного ітераційного процесу, або обраний метод " +
-			"не застосовний до введеної системи.");
+		ResultBox->Text = ("Р’РІРµРґРµРЅС– РІР°РјРё РїРѕС‡Р°С‚РєРѕРІС– РЅР°Р±Р»РёР¶РµРЅРЅСЏ РїСЂРёР·РІРѕРґСЏС‚СЊ РґРѕ СЂРѕР·Р±С–Р¶РЅРѕРіРѕ С–С‚РµСЂР°С†С–Р№РЅРѕРіРѕ РїСЂРѕС†РµСЃСѓ, Р°Р±Рѕ РѕР±СЂР°РЅРёР№ РјРµС‚РѕРґ " +
+			"РЅРµ Р·Р°СЃС‚РѕСЃРѕРІРЅРёР№ РґРѕ РІРІРµРґРµРЅРѕС— СЃРёСЃС‚РµРјРё.");
 		return;
 	case 0:
-		ResultBox->Text = "Дана система рівнянь має такий можливий розв'язок:\n       x = " + result[0] + "\n       y = " + result[1];
+		ResultBox->Text = "Р”Р°РЅР° СЃРёСЃС‚РµРјР° СЂС–РІРЅСЏРЅСЊ РјР°С” С‚Р°РєРёР№ РјРѕР¶Р»РёРІРёР№ СЂРѕР·РІ'СЏР·РѕРє:\n       x = " + result[0] + "\n       y = " + result[1];
 		return;
 	case 2:
-		ResultBox->Text = "Дана система рівнянь визначена на всій множині дійсних чисел.";
+		ResultBox->Text = "Р”Р°РЅР° СЃРёСЃС‚РµРјР° СЂС–РІРЅСЏРЅСЊ РІРёР·РЅР°С‡РµРЅР° РЅР° РІСЃС–Р№ РјРЅРѕР¶РёРЅС– РґС–Р№СЃРЅРёС… С‡РёСЃРµР».";
 		return;
 	default:
 		outputIterations();
@@ -482,12 +482,12 @@ System::Void CalculatorNamespace::Calculator_Form::outputResult(Int16 flag)
 }
 System::Void CalculatorNamespace::Calculator_Form::outputIterations()
 {
-	ResultBox->Text = "Результати ітераційного процесу:";
-	Int16 i = 1;		// Лічильник циклу.
+	ResultBox->Text = "Р РµР·СѓР»СЊС‚Р°С‚Рё С–С‚РµСЂР°С†С–Р№РЅРѕРіРѕ РїСЂРѕС†РµСЃСѓ:";
+	Int16 i = 1;		// Р›С–С‡РёР»СЊРЅРёРє С†РёРєР»Сѓ.
 	for each (Double iter in result)
 	{
 		if (i % 2 == 1) {
-			ResultBox->Text += "\nІтерація " + Math::Floor((Double)i / 2) + " :\n               x = " + iter;
+			ResultBox->Text += "\nР†С‚РµСЂР°С†С–СЏ " + Math::Floor((Double)i / 2) + " :\n               x = " + iter;
 		}
 		else {
 			ResultBox->Text += "\n               y = " + iter;
@@ -495,15 +495,15 @@ System::Void CalculatorNamespace::Calculator_Form::outputIterations()
 		i++;
 	}
 	if (result->Count != 0) {
-		ResultBox->Text += "\n\nОтриманий розв'язок:\n   x = " 
+		ResultBox->Text += "\n\nРћС‚СЂРёРјР°РЅРёР№ СЂРѕР·РІ'СЏР·РѕРє:\n   x = " 
 			+ result[result->Count - 2] + "\n   y = " + result[result->Count - 1] +
-			"\nКількість ітерацій: " + equations->getIterations();
+			"\nРљС–Р»СЊРєС–СЃС‚СЊ С–С‚РµСЂР°С†С–Р№: " + equations->getIterations();
 	}
 }
 System::Boolean CalculatorNamespace::Calculator_Form::initializeEquationsToSolve()
 {
-	Double** coef = new Double * [2];	// Масив коефіцієнтів.
-	Double* initX = new Double[2];		// Масив початкових наближень.
+	Double** coef = new Double * [2];	// РњР°СЃРёРІ РєРѕРµС„С–С†С–С”РЅС‚С–РІ.
+	Double* initX = new Double[2];		// РњР°СЃРёРІ РїРѕС‡Р°С‚РєРѕРІРёС… РЅР°Р±Р»РёР¶РµРЅСЊ.
 	for (Int16 i = 0; i < 2; ++i) {
 		coef[i] = new Double[3];
 	}
@@ -512,7 +512,7 @@ System::Boolean CalculatorNamespace::Calculator_Form::initializeEquationsToSolve
 		scanInitApprox(initX);
 	}
 	catch (...) {
-		if (MessageBox::Show("Не коректний ввід числових даних!\nОчистити форму?", "Помилка!", MessageBoxButtons::YesNo, MessageBoxIcon::Warning) == System::Windows::Forms::DialogResult::Yes)
+		if (MessageBox::Show("РќРµ РєРѕСЂРµРєС‚РЅРёР№ РІРІС–Рґ С‡РёСЃР»РѕРІРёС… РґР°РЅРёС…!\nРћС‡РёСЃС‚РёС‚Рё С„РѕСЂРјСѓ?", "РџРѕРјРёР»РєР°!", MessageBoxButtons::YesNo, MessageBoxIcon::Warning) == System::Windows::Forms::DialogResult::Yes)
 		{
 			clear();
 		}
@@ -528,7 +528,7 @@ System::Boolean CalculatorNamespace::Calculator_Form::initializeEquationsToSolve
 		equations = (gcnew TranscendentalEquations(coef, initX));
 	}
 	else {
-		MessageBox::Show("Оберіть вид системи!", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		MessageBox::Show("РћР±РµСЂС–С‚СЊ РІРёРґ СЃРёСЃС‚РµРјРё!", "РџРѕРјРёР»РєР°!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		for (Int16 i = 0; i < 2; ++i) {
 			delete[] coef[i];
 		}
@@ -543,7 +543,7 @@ System::Boolean CalculatorNamespace::Calculator_Form::initializeEquationsToSolve
 }
 System::Boolean CalculatorNamespace::Calculator_Form::initializeEquationsToDrawGraph()
 {
-	Double** coef = new Double * [2];	// Масив коефіцієнтів.
+	Double** coef = new Double * [2];	// РњР°СЃРёРІ РєРѕРµС„С–С†С–С”РЅС‚С–РІ.
 	for (Int16 i = 0; i < 2; ++i) {
 		coef[i] = new Double[3];
 	}
@@ -551,7 +551,7 @@ System::Boolean CalculatorNamespace::Calculator_Form::initializeEquationsToDrawG
 		scanCoefficients(coef);
 	}
 	catch (...) {
-		if (MessageBox::Show("Не коректний ввід числових даних!\nОчистити форму?", "Помилка!", MessageBoxButtons::YesNo, MessageBoxIcon::Warning) == System::Windows::Forms::DialogResult::Yes)
+		if (MessageBox::Show("РќРµ РєРѕСЂРµРєС‚РЅРёР№ РІРІС–Рґ С‡РёСЃР»РѕРІРёС… РґР°РЅРёС…!\nРћС‡РёСЃС‚РёС‚Рё С„РѕСЂРјСѓ?", "РџРѕРјРёР»РєР°!", MessageBoxButtons::YesNo, MessageBoxIcon::Warning) == System::Windows::Forms::DialogResult::Yes)
 		{
 			clear();
 		}
@@ -567,7 +567,7 @@ System::Boolean CalculatorNamespace::Calculator_Form::initializeEquationsToDrawG
 		equations = gcnew TranscendentalEquations(coef);
 	}
 	else {
-		MessageBox::Show("Оберіть вид системи!", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		MessageBox::Show("РћР±РµСЂС–С‚СЊ РІРёРґ СЃРёСЃС‚РµРјРё!", "РџРѕРјРёР»РєР°!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		for (Int16 i = 0; i < 2; ++i) {
 			delete[] coef[i];
 		}
@@ -582,14 +582,14 @@ System::Boolean CalculatorNamespace::Calculator_Form::initializeEquationsToDrawG
 }
 System::Void CalculatorNamespace::Calculator_Form::solve(Double precis)
 {
-	Int16 flag;		// Прапорець, який визначає, чи вдалося розв’язати систему рівнянь.
+	Int16 flag;		// РџСЂР°РїРѕСЂРµС†СЊ, СЏРєРёР№ РІРёР·РЅР°С‡Р°С”, С‡Рё РІРґР°Р»РѕСЃСЏ СЂРѕР·РІвЂ™СЏР·Р°С‚Рё СЃРёСЃС‚РµРјСѓ СЂС–РІРЅСЏРЅСЊ.
 	if (btnJakobiMethod->Checked) {
 		solvingBegin();
 		try {
 			flag = equations->JakobiMethod(result, precis);
 		}
 		catch (...) {
-			MessageBox::Show("Не вдалося розв'язати вказану систему!", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			MessageBox::Show("РќРµ РІРґР°Р»РѕСЃСЏ СЂРѕР·РІ'СЏР·Р°С‚Рё РІРєР°Р·Р°РЅСѓ СЃРёСЃС‚РµРјСѓ!", "РџРѕРјРёР»РєР°!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			return;
 		}
 		outputResult(flag);
@@ -601,14 +601,131 @@ System::Void CalculatorNamespace::Calculator_Form::solve(Double precis)
 			flag = equations->ZeydelMethod(result, precis);
 		}
 		catch (...) {
-			MessageBox::Show("Не вдалося розв'язати вказану систему!", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			MessageBox::Show("РќРµ РІРґР°Р»РѕСЃСЏ СЂРѕР·РІ'СЏР·Р°С‚Рё РІРєР°Р·Р°РЅСѓ СЃРёСЃС‚РµРјСѓ!", "РџРѕРјРёР»РєР°!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			return;
 		}
 		outputResult(flag);
 		drawGraph(-10, 10, 2);
 	}
 	else {
-		MessageBox::Show("Оберіть метод розв'язання!", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		MessageBox::Show("РћР±РµСЂС–С‚СЊ РјРµС‚РѕРґ СЂРѕР·РІ'СЏР·Р°РЅРЅСЏ!", "РџРѕРјРёР»РєР°!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		return;
+	}
+}
+
+
+System::Void CalculatorNamespace::Calculator_Form::saveInput_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	try {
+		SaveFileDialog^ saveFileDialog = gcnew SaveFileDialog();
+		saveFileDialog->Filter = "Text file (.txt)|*.txt";
+		saveFileDialog->Title = "Р—Р±РµСЂРµР¶РµРЅРЅСЏ РІРІРµРґРµРЅРёС… РґР°РЅРёС…";
+		if (saveFileDialog->ShowDialog() == Windows::Forms::DialogResult::Cancel) {
+			return;
+		}
+		else {
+			String^ newPath = saveFileDialog->FileName;
+
+			System::IO::File::WriteAllText(newPath, "");
+
+			for (int i = 0; i < 2; ++i) {
+				for (int j = 0; j < 3; ++j) {
+					if (tblCoeff->Rows[i]->Cells[j]->Value == nullptr)
+						System::IO::File::AppendAllText(newPath, "0 ");
+					else
+						System::IO::File::AppendAllText(newPath, Convert::ToString(tblCoeff->Rows[i]->Cells[j]->Value) + " ");
+				}
+			}
+			System::IO::File::AppendAllText(newPath, "\n");
+			for (int i = 0; i < 2; ++i) {
+				if (tblInitApprox->Rows[i]->Cells[0]->Value == nullptr)
+					System::IO::File::AppendAllText(newPath, "0 ");
+				else
+					System::IO::File::AppendAllText(newPath, Convert::ToString(tblInitApprox->Rows[i]->Cells[0]->Value) + " ");
+			}
+			System::IO::File::AppendAllText(newPath, "\n" + Convert::ToString(tblPrecision->Text + " \n"));
+
+			if (btnArithmEq->Checked) {
+				System::IO::File::AppendAllText(newPath, "1\n");
+			}
+			else if (btnTrigonomEq->Checked) {
+				System::IO::File::AppendAllText(newPath, "2\n");
+			}
+			else if (btnTranscEq->Checked) {
+				System::IO::File::AppendAllText(newPath, "3\n");
+			}
+			else {
+				System::IO::File::AppendAllText(newPath, "0\n");
+			}
+
+			if (btnJakobiMethod->Checked) {
+				System::IO::File::AppendAllText(newPath, "1");
+			}
+			else if (btnZeydelMethod->Checked) {
+				System::IO::File::AppendAllText(newPath, "2");
+			}
+			else {
+				System::IO::File::AppendAllText(newPath, "0");
+			}
+		}
+	}
+	catch (...) {
+		MessageBox::Show("РќРµ РІРґР°Р»РѕСЃСЏ Р·Р±РµСЂРµРіС‚Рё РІРІРµРґРµРЅС– РґР°РЅС– Р·Р°РґР°С‡С–!", "РџРѕРјРёР»РєР°!", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		return;
+	}
+	MessageBox::Show("Р’Р°С€С– РґР°РЅС– СѓСЃРїС–С€РЅРѕ Р·Р±РµСЂРµР¶РµРЅРѕ!", "РЈСЃРїС–С€РЅРѕ!", MessageBoxButtons::OK, MessageBoxIcon::None);
+}
+
+System::Void CalculatorNamespace::Calculator_Form::openInput_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	try {
+		OpenFileDialog^ openFileDialog = gcnew OpenFileDialog();
+		openFileDialog->Filter = "Text file (.txt)|*.txt";
+		openFileDialog->Title = "Р’С–РґРєСЂРёС‚С‚СЏ С„Р°Р№Р»Сѓ Р· РІС…С–РґРЅРёРјРё РґР°РЅРёРјРё";
+		if (openFileDialog->ShowDialog() == Windows::Forms::DialogResult::Cancel) {
+			return;
+		}
+		else {
+			String^ newPath = openFileDialog->FileName;
+
+			array<String^>^ arr = System::IO::File::ReadAllLines(newPath);
+
+			int k = 0, m;
+			for (int i = 0; i < 2; ++i) {
+				for (int j = 0; j < 3; ++j) {
+					m = arr[0]->IndexOf(" ", k);
+					tblCoeff->Rows[i]->Cells[j]->Value = Convert::ToDouble(arr[0]->Substring(k, m - k));
+					k = m + 1;
+				}
+			}
+			k = 0;
+			for (int i = 0; i < 2; ++i) {
+				m = arr[1]->IndexOf(" ", k);
+				tblInitApprox->Rows[i]->Cells[0]->Value = Convert::ToDouble(arr[1]->Substring(k, m - k));
+				k = m + 1;
+			}
+			tblPrecision->Text = arr[2];
+
+			if (arr[3] == "1") {
+				btnArithmEq->Checked = true;
+			}
+			else if (arr[3] == "2") {
+				btnTrigonomEq->Checked = true;
+			}
+			else if (arr[3] == "3") {
+				btnTranscEq->Checked = true;
+			}
+
+			if (arr[4] == "1") {
+				btnJakobiMethod_Click(sender, e);
+			}
+			if (arr[4] == "2") {
+				btnZeydelMethod_Click(sender, e);
+			}
+		}
+	}
+	catch (...) {
+		MessageBox::Show("РќРµ РІРґР°Р»РѕСЃСЏ РІС–РґРєСЂРёС‚Рё С„Р°Р№Р» Р°Р±Рѕ РІС…С–РґРЅС– РґР°РЅС– РЅРµРєРѕСЂРµРєС‚РЅС–!", "РџРѕРјРёР»РєР°!", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		return;
 	}
 }

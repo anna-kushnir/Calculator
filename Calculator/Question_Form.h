@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 using namespace System::Collections::Generic;
 
 namespace Question_FormNamespace {
@@ -9,61 +9,61 @@ namespace Question_FormNamespace {
 	using namespace System::Windows::Forms;
 
 	/// <summary>
-	/// Клас для відображення форми, створеної для введення меж побудови графіків.
+	/// РљР»Р°СЃ РґР»СЏ РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ С„РѕСЂРјРё, СЃС‚РІРѕСЂРµРЅРѕС— РґР»СЏ РІРІРµРґРµРЅРЅСЏ РјРµР¶ РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ.
 	/// </summary>
 	public ref class Question_Form : public System::Windows::Forms::Form
 	{
 		/// <summary>
-		/// Створює форму Question_Form та ініціалізує її компоненти.
+		/// РЎС‚РІРѕСЂСЋС” С„РѕСЂРјСѓ Question_Form С‚Р° С–РЅС–С†С–Р°Р»С–Р·СѓС” С—С— РєРѕРјРїРѕРЅРµРЅС‚Рё.
 		/// </summary>
 	public: Question_Form(void);
 
 		/// <summary>
-		/// Видаляє всі використовувані формою Question_Form компоненти.
+		/// Р’РёРґР°Р»СЏС” РІСЃС– РІРёРєРѕСЂРёСЃС‚РѕРІСѓРІР°РЅС– С„РѕСЂРјРѕСЋ Question_Form РєРѕРјРїРѕРЅРµРЅС‚Рё.
 		/// </summary>
 	protected: ~Question_Form();
 
 	/// <summary>
-	/// Ліва межа побудови графіків (від якого значення координати x потрібно будувати графік).
+	/// Р›С–РІР° РјРµР¶Р° РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ (РІС–Рґ СЏРєРѕРіРѕ Р·РЅР°С‡РµРЅРЅСЏ РєРѕРѕСЂРґРёРЅР°С‚Рё x РїРѕС‚СЂС–Р±РЅРѕ Р±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє).
 	/// </summary>
 	private: Double x1;
 	/// <summary>
-	/// Права межа побудови графіків (до якого значення координати x потрібно будувати графік).
+	/// РџСЂР°РІР° РјРµР¶Р° РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ (РґРѕ СЏРєРѕРіРѕ Р·РЅР°С‡РµРЅРЅСЏ РєРѕРѕСЂРґРёРЅР°С‚Рё x РїРѕС‚СЂС–Р±РЅРѕ Р±СѓРґСѓРІР°С‚Рё РіСЂР°С„С–Рє).
 	/// </summary>
 	private: Double x2;
 	/// <summary>
-	/// Група, яка містить всі елементи форми Question_Form.
+	/// Р“СЂСѓРїР°, СЏРєР° РјС–СЃС‚РёС‚СЊ РІСЃС– РµР»РµРјРµРЅС‚Рё С„РѕСЂРјРё Question_Form.
 	/// </summary>
 	private: System::Windows::Forms::GroupBox^ boxQuestion;
 	/// <summary>
-	/// Поле для введення лівої межі побудови графіків.
+	/// РџРѕР»Рµ РґР»СЏ РІРІРµРґРµРЅРЅСЏ Р»С–РІРѕС— РјРµР¶С– РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ.
 	/// </summary>
 	private: System::Windows::Forms::TextBox^ tblFrom;
 	/// <summary>
-	/// Поле для введення правої межі побудови графіків.
+	/// РџРѕР»Рµ РґР»СЏ РІРІРµРґРµРЅРЅСЏ РїСЂР°РІРѕС— РјРµР¶С– РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ.
 	/// </summary>
 	private: System::Windows::Forms::TextBox^ tblTo;
 	/// <summary>
-	/// Кнопка для підтвердження введення даних та повернення до первинної (батьківської) форми.
+	/// РљРЅРѕРїРєР° РґР»СЏ РїС–РґС‚РІРµСЂРґР¶РµРЅРЅСЏ РІРІРµРґРµРЅРЅСЏ РґР°РЅРёС… С‚Р° РїРѕРІРµСЂРЅРµРЅРЅСЏ РґРѕ РїРµСЂРІРёРЅРЅРѕС— (Р±Р°С‚СЊРєС–РІСЃСЊРєРѕС—) С„РѕСЂРјРё.
 	/// </summary>
 	private: System::Windows::Forms::Button^ btnAccept;
 	/// <summary>
-	/// Напис "Від".
+	/// РќР°РїРёСЃ "Р’С–Рґ".
 	/// </summary>
 	private: System::Windows::Forms::Label^ labelFrom;
 	/// <summary>
-	/// Напис "До".
+	/// РќР°РїРёСЃ "Р”Рѕ".
 	/// </summary>
 	private: System::Windows::Forms::Label^ labelTo;
 
 	/// <summary>
-	/// Необхідна змінна для зберігання компонентів графічного дизайну.
+	/// РќРµРѕР±С…С–РґРЅР° Р·РјС–РЅРЅР° РґР»СЏ Р·Р±РµСЂС–РіР°РЅРЅСЏ РєРѕРјРїРѕРЅРµРЅС‚С–РІ РіСЂР°С„С–С‡РЅРѕРіРѕ РґРёР·Р°Р№РЅСѓ.
 	/// </summary>
 	private: System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Ініціалізує всі графічні компоненти форми.
+		/// Р†РЅС–С†С–Р°Р»С–Р·СѓС” РІСЃС– РіСЂР°С„С–С‡РЅС– РєРѕРјРїРѕРЅРµРЅС‚Рё С„РѕСЂРјРё.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -90,7 +90,7 @@ namespace Question_FormNamespace {
 			this->boxQuestion->Size = System::Drawing::Size(350, 197);
 			this->boxQuestion->TabIndex = 10;
 			this->boxQuestion->TabStop = false;
-			this->boxQuestion->Text = L"Введіть межі для побудови графіків:";
+			this->boxQuestion->Text = L"Р’РІРµРґС–С‚СЊ РјРµР¶С– РґР»СЏ РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ:";
 			// 
 			// tblFrom
 			// 
@@ -119,7 +119,7 @@ namespace Question_FormNamespace {
 			this->btnAccept->Name = L"btnAccept";
 			this->btnAccept->Size = System::Drawing::Size(170, 49);
 			this->btnAccept->TabIndex = 5;
-			this->btnAccept->Text = L"Підтвердити";
+			this->btnAccept->Text = L"РџС–РґС‚РІРµСЂРґРёС‚Рё";
 			this->btnAccept->UseVisualStyleBackColor = true;
 			this->btnAccept->Click += gcnew System::EventHandler(this, &Question_Form::btnAccept_Click);
 			// 
@@ -132,7 +132,7 @@ namespace Question_FormNamespace {
 			this->labelFrom->Name = L"labelFrom";
 			this->labelFrom->Size = System::Drawing::Size(33, 19);
 			this->labelFrom->TabIndex = 8;
-			this->labelFrom->Text = L"Від:";
+			this->labelFrom->Text = L"Р’С–Рґ:";
 			// 
 			// labelTo
 			// 
@@ -143,7 +143,7 @@ namespace Question_FormNamespace {
 			this->labelTo->Name = L"labelTo";
 			this->labelTo->Size = System::Drawing::Size(31, 19);
 			this->labelTo->TabIndex = 8;
-			this->labelTo->Text = L"До:";
+			this->labelTo->Text = L"Р”Рѕ:";
 			// 
 			// Question_Form
 			// 
@@ -159,7 +159,7 @@ namespace Question_FormNamespace {
 			this->Name = L"Question_Form";
 			this->SizeGripStyle = System::Windows::Forms::SizeGripStyle::Hide;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Межі побудови";
+			this->Text = L"РњРµР¶С– РїРѕР±СѓРґРѕРІРё";
 			this->boxQuestion->ResumeLayout(false);
 			this->boxQuestion->PerformLayout();
 			this->ResumeLayout(false);
@@ -168,21 +168,21 @@ namespace Question_FormNamespace {
 		}
 #pragma endregion
 	/// <summary>
-	/// Сканує введені користувачем межі для побудови графіків і закриває вікно форми.
+	/// РЎРєР°РЅСѓС” РІРІРµРґРµРЅС– РєРѕСЂРёСЃС‚СѓРІР°С‡РµРј РјРµР¶С– РґР»СЏ РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ С– Р·Р°РєСЂРёРІР°С” РІС–РєРЅРѕ С„РѕСЂРјРё.
 	/// </summary>
-	/// <param name = 'sender'>Об’єкт класу Object^</param>
-	/// <param name = 'e'>Об'єкт класу EventArgs^</param>
-	/// <returns>Значення типу Void.</returns>
+	/// <param name = 'sender'>РћР±вЂ™С”РєС‚ РєР»Р°СЃСѓ Object^</param>
+	/// <param name = 'e'>РћР±'С”РєС‚ РєР»Р°СЃСѓ EventArgs^</param>
+	/// <returns>Р—РЅР°С‡РµРЅРЅСЏ С‚РёРїСѓ Void.</returns>
     private: System::Void btnAccept_Click(System::Object^ sender, System::EventArgs^ e);
 	/// <summary>
-	/// Повертає значення лівої межі побудови графіків.
+	/// РџРѕРІРµСЂС‚Р°С” Р·РЅР°С‡РµРЅРЅСЏ Р»С–РІРѕС— РјРµР¶С– РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ.
 	/// </summary>
-	/// <returns>Значення типу Double.</returns>
+	/// <returns>Р—РЅР°С‡РµРЅРЅСЏ С‚РёРїСѓ Double.</returns>
     public: Double getXFrom();
 	/// <summary>
-	/// Повертає значення правої межі побудови графіків.
+	/// РџРѕРІРµСЂС‚Р°С” Р·РЅР°С‡РµРЅРЅСЏ РїСЂР°РІРѕС— РјРµР¶С– РїРѕР±СѓРґРѕРІРё РіСЂР°С„С–РєС–РІ.
 	/// </summary>
-	/// <returns>Значення типу Double.</returns>
+	/// <returns>Р—РЅР°С‡РµРЅРЅСЏ С‚РёРїСѓ Double.</returns>
 	public: Double getXTo();
 	};
 }
